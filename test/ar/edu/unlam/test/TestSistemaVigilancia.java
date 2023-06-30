@@ -1,5 +1,7 @@
 package ar.edu.unlam.test;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 import ar.edu.unlam.dominio.PlanificadorDeEventos;
@@ -45,15 +47,33 @@ public class TestSistemaVigilancia {
 	@Test
 	public void queSePuedaCrearUnCasamiento() {
 		// Preparación
-		final String mailOrganizador = "roberto@galan.com", nombreOrganizador = "Roberto Galan", mailAgasajado1 = "luli@salazar.com", nombreAgasajado1 = "Luciana Zalazar", mailAgasajado2 = "rodrigo@redrado.com", nombreAgasajado2 = "Rodrigo Redrado", nombreDelEvento = "El casamiento de Luli y Rodri";
-		final Integer edadOrganizador = 101, edadAgasajado1 = 36, edadAgasajado2 = 43;
-		final Integer cantidadDeUsuariosEsperados = 2, cantidadDeEventosEsperados = 1, cantidadDeCumpleaniosEsperados = 1, cantidadDeCasamientosEsperados = 0;
+		final String mailOrganizador = "roberto@galan.com";
+		String nombreOrganizador = "Roberto Galan"; 
+		final Integer edadOrganizador = 101;
+		Usuario organizador = new Usuario(mailOrganizador, nombreOrganizador, edadOrganizador);
+		
+		String mailAgasajado1 = "luli@salazar.com"; 
+		String nombreAgasajado1 = "Luciana Zalazar";
+		Integer edadAgasajado1 = 36;
+		Usuario  agasajado1= new Usuario(mailAgasajado1, nombreAgasajado1, edadAgasajado1);
+		
+		String mailAgasajado2 = "rodrigo@redrado.com";
+		String nombreAgasajado2 = "Rodrigo Redrado";
+		Integer edadAgasajado2 = 43;
+		Usuario  agasajado2= new Usuario(mailAgasajado2, nombreAgasajado2, edadAgasajado2);
+		
+		String nombreDelEvento = "El casamiento de Luli y Rodri";
+		
+		final Integer cantidadDeUsuariosEsperados = 2;
+		Integer cantidadDeEventosEsperados = 1;
+		Integer cantidadDeCumpleaniosEsperados = 1;
+		Integer cantidadDeCasamientosEsperados = 0;
 		
 		// Ejecución
 		PlanificadorDeEventos principal = new PlanificadorDeEventos();
-		principal.add(new Usuario(mailOrganizador, nombreOrganizador, edadOrganizador));
-		principal.add(new Usuario(mailAgasajado1, nombreAgasajado1, edadAgasajado1));
-		principal.add(new Usuario(mailAgasajado2, nombreAgasajado2, edadAgasajado2));
+		principal.add(organizador);
+		principal.add(agasajado1);
+		principal.add(agasajado2);
 		principal.crear(principal.getUsuario(mailOrganizador), nombreDelEvento);
 		principal.getEvento(nombreDelEvento).add((Agasajado)new Usuario(mailAgasajado1, nombreAgasajado1, edadAgasajado1));
 		principal.getEvento(nombreDelEvento).add((Agasajado)new Usuario(mailAgasajado1, nombreAgasajado1, edadAgasajado1));		

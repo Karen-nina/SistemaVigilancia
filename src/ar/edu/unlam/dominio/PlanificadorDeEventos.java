@@ -1,6 +1,7 @@
 package ar.edu.unlam.dominio;
 
 public class PlanificadorDeEventos {
+	
 
 	public String getUsuario(String mailOrganizador) {
 		// TODO Auto-generated method stub
