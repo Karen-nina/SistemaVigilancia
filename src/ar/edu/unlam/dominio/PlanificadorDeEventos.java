@@ -3,7 +3,16 @@ package ar.edu.unlam.dominio;
 public class PlanificadorDeEventos {
 	
 
-	public String getUsuario(String mailOrganizador) {
+	CantidadDeCumpleanios
+	CantidadDeCasamientos
+	CantidadDeEventos
+	CantidadDeUsuarios
+	CantidadDeInvitados
+	CantidadDeInvitadosConfirmados
+	
+	
+	
+	public Usuario getUsuario(String mailOrganizador) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -18,10 +27,22 @@ public class PlanificadorDeEventos {
 		
 	}
 
-	public void crear(String usuarioBuscado, Usuario agasajado) {
+	public void invitar(Cumple elCumpleDeLeo, Usuario invitado) {
 		// TODO Auto-generated method stub
 		
 	}
+
+	public void crear(Usuario organizadorDelEvento, Cumple elCumpleDeLeo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public void confirmar(Cumple elCumpleDeLeo, Usuario elKun) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 	public Object getCantidadDeCumpleanios() {
 		// TODO Auto-generated method stub
@@ -43,4 +64,15 @@ public class PlanificadorDeEventos {
 		return null;
 	}
 
+
+	public Object getCantidadDeInvitados() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object getCantidadDeInvitadosConfirmados() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }
